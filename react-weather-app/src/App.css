@@ -1,6 +1,11 @@
+main {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 .input {
     display: flex;
     justify-content: flex-start;
+    align-items: baseline;
     margin: 0.5rem;
 }
 
