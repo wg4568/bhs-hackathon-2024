@@ -23,6 +23,20 @@ https://github.com/wg4568/bhs-hackathon-2024
 
 ---
 
+# Introduction
+
+My name is **William Gardner**, I'm currently studying business and photography at De Anza college. I also run a business in the media production space where I hold a variety of roles...
+
+- Web developer
+- Drone pilot
+- VFX artist
+- Accountant
+
+I'll be at the hackathon all day. Feel free to stop by and ask me questions about this workshop, or anything above!
+
+
+---
+
 # Workshop Overview
 
 - What is ReactJS, and how does it help us?
