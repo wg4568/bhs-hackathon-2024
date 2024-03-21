@@ -252,9 +252,33 @@ We can use the `ref` property of the input box to it to the `inputRef` variable.
 
 ---
 
+# A Brief Look At CSS
+
+CSS in React can be done in *many* different ways. The easiest way is to create a regular css file and import it into your app.
+
+```css
+/* App.css */
+.red {
+    color: red;
+}
+```
+
+```jsx
+// App.jsx
+import "./App.css"
+
+function MyApp() {
+    return <h1 className="red">I am red!</h1>
+}
+```
+
+Notice how React uses `className` instead of `class` when specifying css classes.
+
+---
+
 # Next Steps
 
-**Check out the source code from this lesson (and view the slides)**
+**Check out the code and slides from this lesson**
 https://github.com/wg4568/bhs-hackathon-2024
 
 **Setup a local dev environment**
