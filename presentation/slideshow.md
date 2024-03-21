@@ -5,7 +5,7 @@ theme: gaia
 
 <style>
 p, pre {
-   font-size: 0.9rem;
+   font-size: 0.8rem;
 }
 
 section {
@@ -18,7 +18,6 @@ section {
 # Intro to ReactJS
 
 BHS Hackathon 2024
-
 https://github.com/wg4568/bhs-hackathon-2024
 
 ---
@@ -92,5 +91,96 @@ Otherwise known as JSX, or **Javascript XML**.
 Needs to be compiled, or "bundled" into standard Javascript code by a tool such as Vite or Webpack.
 
 ![height:340px](images/bundler.png)
+
+---
+
+# Building Your Code
+
+We are using [Vite](https://vitejs.dev/) as our bundler.
+
+```json
+    // From package.json
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+```
+
+We can run `npm run build` in the console to build our code.
+
+Take a look in the new folder called `dist/`, what files have been created?
+
+---
+
+# Passing Values
+
+We can pass data into React components using **props**.
+
+```jsx
+function Nametag(props) {
+    return <h1>Written by {props.name}</h1>
+}
+
+function MyApp() {
+    return <div>
+        <Nametag name="Matt" />
+    </div>
+}
+```
+
+If you'd like, you can also get the value directly using deconstruction.
+
+```jsx
+function Nametag({ name }) {
+    return <h1>Written by {name}</h1>
+}
+```
+
+---
+
+# Why Doesn't This Work?
+
+```jsx
+function MyCounter() {
+    var count = 0;
+
+    function increaseCount() {
+        count = count + 1;
+    }
+
+    return <div>
+        <p>The total is {count}</p>
+        <button onClick={increaseCount}>Increase!</button>
+    </div>
+}
+```
+
+The answer is to do with how ReactJS handles **state**.
+
+State is how an application remembers stuff.
+
+---
+
+# Managing State
+
+ReactJS components manage their own state using **hooks**.
+
+```jsx
+function MyCounter() {
+    const [count, setCount] = useState(0);
+
+    function increaseCount() {
+        setCount(count + 1);
+    }
+
+    return <div>
+        <p>The total is {count}</p>
+        <button onClick={increaseCount}>Increase!</button>
+    </div>
+}
+```
+
+The `useState` hook creates an object (that can be anything) and a function to update it's value. The value provided to `useState` is the initial value.
 
 ---
