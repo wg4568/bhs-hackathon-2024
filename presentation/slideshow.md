@@ -13,6 +13,7 @@ section {
 }
 </style>
 
+<!-- backgroundColor: white -->
 <!-- _class: lead -->
 
 # Intro to ReactJS
