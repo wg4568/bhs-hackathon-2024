@@ -249,3 +249,16 @@ function MyApp() {
 ```
 
 We can use the `ref` property of the input box to it to the `inputRef` variable.
+
+---
+
+# Next Steps
+
+**Check out the source code from this lesson (and view the slides)**
+https://github.com/wg4568/bhs-hackathon-2024
+
+**Setup a local dev environment**
+https://www.youtube.com/watch?v=t5ffPXorFf4
+
+**Read the ReactJS documentation**
+https://react.dev/learn
