@@ -23,6 +23,61 @@ https://github.com/wg4568/bhs-hackathon-2024
 
 ---
 
+# Workshop Overview
+
+- What is ReactJS, and how does it help us?
+- Setting up a ReactJS project in repl.it
+- What is a bundler, why do we need one?
+- Managing state using hooks
+- Getting user input from the browser
+- Styling our project with CSS
+
+---
+
+# Prerequisites
+
+- Foundational understanding of Javascript
+- Basic HTML knowledge
+
+```jsx
+var data = [1, 2, 3, 4, 5];
+
+data = data.map((item) => item * 2);
+
+console.log(data);
+```
+
+What does `(item) => item * 2` represent?
+What will this code produce?
+
+---
+
+# Prerequisites
+
+- Foundational understanding of Javascript
+- Basic HTML knowledge
+
+```jsx
+var data = [1, 2, 3, 4, 5];
+
+data = data.map((item, idx) => item + idx);
+
+console.log(data);
+```
+
+What does `(item) => item * 2` represent?
+What will this code produce?
+
+```
+1) An anonymous function that returns double it's input
+2) [2, 4, 6, 8, 10]
+```
+
+---
+<!-- _class: lead -->
+
+![width:200px](images/react-icon.png)
+
 # ReactJS is a **component based** framework for creating web applications.
 
 ---
