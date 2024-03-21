@@ -27,31 +27,30 @@ https://github.com/wg4568/bhs-hackathon-2024
 
 My name is **William Gardner**, I'm currently studying business and photography at De Anza college. I also run a business in the media production space where I hold a variety of roles...
 
-- Web developer
-- Drone pilot
-- VFX artist
-- Accountant
+-   Web developer
+-   Drone pilot
+-   VFX artist
+-   Accountant
 
 I'll be at the hackathon all day. Feel free to stop by and ask me questions about this workshop, or anything above!
-
 
 ---
 
 # Workshop Overview
 
-- What is ReactJS, and how does it help us?
-- Setting up a ReactJS project in repl.it
-- What is a bundler, why do we need one?
-- Managing state using hooks
-- Getting user input from the browser
-- Styling our project with CSS
+-   What is ReactJS, and how does it help us?
+-   Setting up a ReactJS project in repl.it
+-   What is a bundler, why do we need one?
+-   Managing state using hooks
+-   Getting user input from the browser
+-   Styling our project with CSS
 
 ---
 
 # Prerequisites
 
-- Foundational understanding of Javascript
-- Basic HTML knowledge
+-   Foundational understanding of Javascript
+-   Basic HTML knowledge
 
 ```jsx
 var data = [1, 2, 3, 4, 5];
@@ -68,13 +67,13 @@ What will this code produce?
 
 # Prerequisites
 
-- Foundational understanding of Javascript
-- Basic HTML knowledge
+-   Foundational understanding of Javascript
+-   Basic HTML knowledge
 
 ```jsx
 var data = [1, 2, 3, 4, 5];
 
-data = data.map((item, idx) => item + idx);
+data = data.map((item) => item * 2);
 
 console.log(data);
 ```
@@ -88,6 +87,7 @@ What will this code produce?
 ```
 
 ---
+
 <!-- _class: lead -->
 
 ![width:200px](images/react-icon.png)
@@ -120,17 +120,21 @@ Imagine if we had 150 employees! Is this DRY code?
 
 ```jsx
 function Profile(props) {
-    return <div>
-        <img src={props.photo} />
-        <h1>{props.name}</h1>
-    </div>
+    return (
+        <div>
+            <img src={props.photo} />
+            <h1>{props.name}</h1>
+        </div>
+    );
 }
 
 function MyApp() {
-    return <div>
-        <Profile name="Jimmy John" profile="/jimmy.jpg" />
-        <Profile name="Sarah Smith" profile="/sarah.jpg" />
-    </div>
+    return (
+        <div>
+            <Profile name="Jimmy John" photo="/jimmy.jpg" />
+            <Profile name="Sarah Smith" photo="/sarah.jpg" />
+        </div>
+    );
 }
 ```
 
@@ -189,13 +193,11 @@ We can pass data into React components using **props**.
 
 ```jsx
 function Nametag(props) {
-    return <h1>Written by {props.name}</h1>
+    return <h1>Written by {props.name}</h1>;
 }
 
 function MyApp() {
-    return <div>
-        <Nametag name="Matt" />
-    </div>
+    return <Nametag name="Matt" />;
 }
 ```
 
@@ -203,7 +205,7 @@ If you'd like, you can also get the value directly using deconstruction.
 
 ```jsx
 function Nametag({ name }) {
-    return <h1>Written by {name}</h1>
+    return <h1>Written by {name}</h1>;
 }
 ```
 
@@ -219,10 +221,12 @@ function MyCounter() {
         count = count + 1;
     }
 
-    return <div>
-        <p>The total is {count}</p>
-        <button onClick={increaseCount}>Increase!</button>
-    </div>
+    return (
+        <div>
+            <p>The total is {count}</p>
+            <button onClick={increaseCount}>Increase!</button>
+        </div>
+    );
 }
 ```
 
@@ -244,14 +248,16 @@ function MyCounter() {
         setCount(count + 1);
     }
 
-    return <div>
-        <p>The total is {count}</p>
-        <button onClick={increaseCount}>Increase!</button>
-    </div>
+    return (
+        <div>
+            <p>The total is {count}</p>
+            <button onClick={increaseCount}>Increase!</button>
+        </div>
+    );
 }
 ```
 
-The `useState` hook creates an object (that can be anything) and a function to update it's value. The value provided to `useState` is the initial value.
+The `useState` hook creates an object (that can be anything) and a function to update it.
 
 ---
 
@@ -263,11 +269,13 @@ Use Javascript's `.map` function to render arrays of elements.
 function ListOfAuthors() {
     const authors = ["Joe", "Amy", "Mike", "Megs"];
 
-    return <div>
-        {authors.map((name, index) => (
-            <Author key={index} name={name} />
-        ))}
-    </div>
+    return (
+        <div>
+            {authors.map((name, index) => (
+                <Author key={index} name={name} />
+            ))}
+        </div>
+    );
 }
 ```
 
@@ -324,7 +332,7 @@ We can use the `ref` property of the input box to it to the `inputRef` variable.
 
 # A Brief Look At CSS
 
-CSS in React can be done in *many* different ways. The easiest way is to create a regular css file and import it into your app.
+CSS in React can be done in _many_ different ways. The easiest way is to create a regular css file and import it into your app.
 
 ```css
 /* App.css */
@@ -335,10 +343,10 @@ CSS in React can be done in *many* different ways. The easiest way is to create 
 
 ```jsx
 // App.jsx
-import "./App.css"
+import "./App.css";
 
 function MyApp() {
-    return <h1 className="red">I am red!</h1>
+    return <h1 className="red">I am red!</h1>;
 }
 ```
 
