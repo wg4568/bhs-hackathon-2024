@@ -68,11 +68,11 @@ Now we can reuse our `Profile` component across our project.
 
 ---
 
-# ReactJS Weather App
+# Thinking With Components
 
-![height:300px](images/weather-app.png)
+![height:450px](images/website-example.png)
 
-How might you break down this "design" into components?
+How might you break down this page into components?
 
 ---
 
@@ -184,3 +184,68 @@ function MyCounter() {
 The `useState` hook creates an object (that can be anything) and a function to update it's value. The value provided to `useState` is the initial value.
 
 ---
+
+# Lists Of Various Things
+
+Use Javascript's `.map` function to render arrays of elements.
+
+```jsx
+function ListOfAuthors() {
+    const authors = ["Joe", "Amy", "Mike", "Megs"];
+
+    return <div>
+        {authors.map((name, index) => (
+            <Author key={index} name={name} />
+        ))}
+    </div>
+}
+```
+
+Whenever you are rendering lists of items, ReactJS requires a unique `key` value for each element. The easiest way to do this is to use the item index.
+
+---
+
+# User Input
+
+The `onClick` property is used to catch when the user presses the submit button.
+
+```jsx
+function MyApp() {
+    function showName() {
+        // TODO: Get name from input box
+        alert("Your name is ??");
+    }
+
+    return <div>
+        <input type="text" placeholder="Enter your name">
+        <button onClick={showName}>Submit!</button>
+    </div>
+}
+```
+
+Notice how we create a function to handle the event.
+
+How do we get the value of the input box?
+
+---
+
+# References To HTML Elements
+
+To get the value of our input box, we need a **reference**. References are created with the `useRef` hook.
+
+```jsx
+function MyApp() {
+    const inputRef = useRef(null);
+
+    function showName() {
+        alert("Your name is " + inputRef.current.value);
+    }
+
+    return <div>
+        <input ref={inputRef} type="text" placeholder="Enter your name">
+        <button onClick={showName}>Submit!</button>
+    </div>
+}
+```
+
+We can use the `ref` property of the input box to it to the `inputRef` variable.
