@@ -4,8 +4,12 @@ theme: gaia
 ---
 
 <style>
-pre {
+p, pre {
    font-size: 0.9rem;
+}
+
+section {
+    padding: 1rem;
 }
 </style>
 
@@ -39,9 +43,11 @@ https://github.com/wg4568/bhs-hackathon-2024
 
 What happens if we want to change how a profile is displayed?
 
+Imagine if we had 150 employees! Is this DRY code?
+
 ---
 
-# ReactJS To The Rescue!
+# ReactJS To The Rescue
 
 ```jsx
 function Profile(props) {
@@ -65,5 +71,26 @@ Now we can reuse our `Profile` component across our project.
 
 # ReactJS Weather App
 
-![](weather-app.png)
+![height:300px](images/weather-app.png)
 
+How might you break down this "design" into components?
+
+---
+
+# Getting Started
+
+![width:620px](images/create-repl.png)
+
+Navigate to https://replit.com/ and create an account. Then start a new project using the **React Javascript** template.
+
+---
+
+# HTML, in Javascript?!
+
+Otherwise known as JSX, or **Javascript XML**.
+
+Needs to be compiled, or "bundled" into standard Javascript code by a tool such as Vite or Webpack.
+
+![height:340px](images/bundler.png)
+
+---
