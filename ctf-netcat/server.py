@@ -4,16 +4,22 @@ files = os.listdir("files")
 
 HOST = ('localhost', 65432)
 
-help_msg = """ ~~ Command Help ~~
+help_msg = """~~ Command Help ~~
   ls - list files
   cat - read file
   help - show this message
   exit - disconnect"""
 
+def log(addr, *args):
+    print("[%s:%s]" % addr, *args)
+
 async def handle_client(client):
     try:
         loop = asyncio.get_event_loop()
         running = True
+
+        addr = client.getpeername()
+        log(addr, "Connected")
 
         while running:
             await loop.sock_sendall(client, "user@netcat-server ~ $ ".encode("utf8"))
@@ -22,6 +28,8 @@ async def handle_client(client):
 
             response = "nuh uh (try help)"
             cmd = request.split(" ")[0]
+
+            log(addr, "MSG: " + request)
 
             if cmd == "help":
                 response = help_msg
@@ -52,7 +60,9 @@ async def handle_client(client):
             await loop.sock_sendall(client, (response + "\n").encode('utf8'))
 
         client.close()
+        log(addr, "Disconnected")
     except Exception as e:
+        log(addr, "Error", e)
         print("Terminated connection")
 
 async def run_server():
