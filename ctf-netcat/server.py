@@ -2,7 +2,7 @@ import asyncio, socket, os
 
 files = os.listdir("files")
 
-HOST = ('localhost', 65432)
+HOST = ('0.0.0.0', 65432)
 
 help_msg = """~~ Command Help ~~
   ls - list files
