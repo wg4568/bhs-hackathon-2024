@@ -1,0 +1,13 @@
+.question {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.correct {
+    background-color: lightgreen;
+}
+
+.answerBox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
